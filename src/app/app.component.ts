@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'course-project-basics';
+  activePage = 'home';
+
+  changeActivePage(activePage: string) {
+    this.activePage = activePage;
+    console.log(this.activePage);
+  }
 }

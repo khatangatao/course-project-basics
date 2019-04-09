@@ -1,11 +1,16 @@
+<app-header (currentPageExposed)="changeActivePage($event)"></app-header>
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <h2>Im working</h2>
-      <app-header></app-header>
+    <div class="col-md-12" *ngIf="activePage === 'home';">
       <app-shopping-list></app-shopping-list>
       <app-recipes></app-recipes>
+    </div>
 
+    <div class="col-md-12" *ngIf="activePage === 'recipes'">
+      <app-recipes></app-recipes>
+    </div>
+    <div class="col-md-12" *ngIf="activePage === 'shopping'">
+        <app-shopping-list></app-shopping-list>
     </div>
   </div>
 </div>
