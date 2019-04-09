@@ -10,20 +10,20 @@ import {
 })
 export class HeaderComponent{
   currentPage: string = 'home';
-  @Output() currentPageExposed = new EventEmitter<string>();
+  @Output() featureSelected = new EventEmitter<string>();
 
   comebackToHomePage() {
     this.currentPage = 'home';
-    this.currentPageExposed.emit(this.currentPage);
+    this.featureSelected.emit(this.currentPage);
   }
 
-  selectRecipeList() {
+  onSelect(feature: string) {
     this.currentPage = 'recipes';
-    this.currentPageExposed.emit(this.currentPage);
+    this.featureSelected.emit(feature);
   }
 
-  selectShoppingList() {
-    this.currentPage = 'shopping';
-    this.currentPageExposed.emit(this.currentPage);
-  }
+  // selectShoppingList() {
+  //   this.currentPage = 'shopping';
+  //   this.featureSelected.emit(this.currentPage);
+  // }
 }

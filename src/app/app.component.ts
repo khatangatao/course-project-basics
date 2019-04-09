@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'course-project-basics';
-  activePage = 'home';
+  loadedFeature = 'recipe';
 
-  changeActivePage(activePage: string) {
-    this.activePage = activePage;
-    console.log(this.activePage);
+  onNavigate(feature: string) {
+    this.loadedFeature = feature;
+    console.log(this.loadedFeature);
   }
 }

@@ -1,16 +1,20 @@
-<app-header (currentPageExposed)="changeActivePage($event)"></app-header>
+<app-header (featureSelected)="onNavigate($event)"></app-header>
 <div class="container">
   <div class="row">
-    <div class="col-md-12" *ngIf="activePage === 'home';">
-      <app-shopping-list></app-shopping-list>
-      <app-recipes></app-recipes>
-    </div>
+    <!--<div class="col-md-12" *ngIf="loadedFeature === 'home';">-->
+      <!--<app-shopping-list></app-shopping-list>-->
+      <!--<app-recipes></app-recipes>-->
+    <!--</div>-->
 
-    <div class="col-md-12" *ngIf="activePage === 'recipes'">
-      <app-recipes></app-recipes>
-    </div>
-    <div class="col-md-12" *ngIf="activePage === 'shopping'">
-        <app-shopping-list></app-shopping-list>
+    <!--<div class="col-md-12" *ngIf="loadedFeature === 'recipes'">-->
+      <!--<app-recipes></app-recipes>-->
+    <!--</div>-->
+    <!--<div class="col-md-12" *ngIf="loadedFeature === 'shopping'">-->
+        <!--<app-shopping-list></app-shopping-list>-->
+    <!--</div>-->
+    <div class="col-md-12">
+      <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list>
+      <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
     </div>
   </div>
 </div>
